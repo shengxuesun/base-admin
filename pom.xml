@@ -6,7 +6,7 @@
     <artifactId>base-admin</artifactId>
     <version>0.0.1</version>
     <name>base-admin</name>
-    <description>Base Admin一套简单通用的后台管理系统</description>
+    <description>Hik民航对接工程</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -14,7 +14,11 @@
         <version>2.1.7.RELEASE</version>
         <relativePath/>
     </parent>
-
+    <developers>
+        <developer>
+            <name>sunjian</name>
+        </developer>
+    </developers>
     <dependencies>
         <!-- spring-boot-starter -->
         <dependency>
@@ -73,7 +77,13 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.13</version>
         </dependency>
-
+        <!--添加Oracle驱动依赖 -->
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc8-production</artifactId>
+            <version>19.8.0.0</version>
+            <type>pom</type>
+        </dependency>
         <!-- CopyUtil需要用到 -->
         <dependency>
             <groupId>commons-beanutils</groupId>
@@ -118,6 +128,37 @@
             <artifactId>oshi-json</artifactId>
             <version>3.6.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.9</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba</groupId>-->
+<!--            <artifactId>fastjson</artifactId>-->
+<!--            <version>1.2.74</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.74</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hikvision.ga</groupId>
+            <artifactId>artemis-http-client</artifactId>
+            <version>1.1.3</version>
+        </dependency>
     </dependencies>
 
     <!--构建工具-->
@@ -141,5 +182,16 @@
             </plugin>
         </plugins>
     </build>
-
+    <distributionManagement>
+        <repository>
+            <id>PBG-release</id>
+            <name>PBG-release</name>
+            <url>http://af.hikvision.com.cn:80/artifactory/maven-pbg-release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>PBG-snapshot</id>
+            <name>PBG-snapshot</name>
+            <url>http://af.hikvision.com.cn/artifactory/maven-pbg-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
