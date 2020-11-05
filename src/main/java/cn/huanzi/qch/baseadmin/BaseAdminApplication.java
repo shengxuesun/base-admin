@@ -43,6 +43,7 @@ import java.util.List;
 public class BaseAdminApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(BaseAdminApplication.class, args);
     }
 
